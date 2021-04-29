@@ -1,22 +1,10 @@
 const database = {
     orderBuilder: {},
-    paints = [
-        {id: 1, color: "Silver", price: 100.00},
-        {
-            id: 2,
-            color: "Midnight Blue",
-            price: 125.00
-        },
-        {
-            id: 3,
-            color: "Firebrick Red",
-            price: 150.00
-        },
-        {
-            id: 4,
-            color: "Spring Green",
-            price: 125.00
-        }
+    paints =[
+        { id: 1, color: "Silver", price: 100.00 },
+        { id: 2, color: "Midnight Blue", price: 125.00 },
+        { id: 3, color: "Firebrick Red", price: 150.00 },
+        { id: 4, color: "Spring Green", price: 125.00 }
     ],
     interiors = [
         {
@@ -119,17 +107,17 @@ export const getOrders = () => {
 
 export const setPaint = (id) => {
     database.orderBuilder.paintId = id;
-  };
-  
-  export const setInterior = (id) => {
-    database.orderBuilder.interiorId = id;
-  };
-  
-  export const setTechnology = (id) => {
-    database.orderBuilder.technologyId = id;
-  };
+};
 
-  export const setWheels = (id) => {
+export const setInterior = (id) => {
+    database.orderBuilder.interiorId = id;
+};
+
+export const setTechnology = (id) => {
+    database.orderBuilder.technologyId = id;
+};
+
+export const setWheels = (id) => {
     database.orderBuilder.wheelsId = id;
-  };
+};
 
