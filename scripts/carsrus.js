@@ -5,7 +5,15 @@ import { Paints } from "./Paints.js";
 import { Interiors } from "./Interiors.js";
 import { Technologies } from "./Technologies.js";
 import { Wheels } from "./Wheels.js";
-// import { Orders } from "./Orders.js";
+import { Orders } from "./Orders.js";
+import { addCustomOrder } from "./database.js";
+
+document.addEventListener("click", (event) => {
+  const itemClicked = event.target;
+  if (itemClicked.id.startsWith("orderButton")) {
+    addCustomOrder();
+  }
+});
 
 export const carsRus = () => {
   return `
@@ -35,6 +43,7 @@ export const carsRus = () => {
 
     <article class="customOrders">
       <h2>Custom Car Builds</h2>
+      ${Orders()}
     </article>
     `;
 };
