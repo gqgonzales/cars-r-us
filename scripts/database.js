@@ -9,22 +9,22 @@ const database = {
     interiors = [
         {
             id: 1,
-            type: "beige",
-            price: 200.00,
+            type: "Beige Fabric",
+            price: 100.00,
         },
         {
             id: 2,
-            type: "beige",
-            price: 150.00
+            type: "Charcoal Fabric",
+            price: 100.00
         },
         {
             id: 3,
-            type: "beige",
+            type: "White Leather",
             price: 200.00,
         },
         {
             id: 4,
-            type: "beige",
+            type: "Black Leather",
             price: 200.00,
         },
     ],
@@ -32,22 +32,22 @@ const database = {
         {
             id: 1,
             package: "Basic Package",
-            price: 0.00
+            price: 100.00
         },
         {
             id: 2,
             package: "Navigation Package",
-            price: 0.00
+            price: 200.00
         },
         {
             id: 3,
             package: "Visibility Package",
-            price: 0.00
+            price: 225.00
         },
         {
             id: 4,
             package: "Ultra Package",
-            price: 0.00
+            price: 400.00
         },
     ],
     wheels = [
@@ -59,16 +59,16 @@ const database = {
         {
             id: 2,
             type: "17-inch Pair Radial Black",
-            price: 200.00,
+            price: 225.00,
         },
         {
             id: 3,
             type: "18-inch Pair Spoke Silver",
-            price: 200.00,
+            price: 3250.00,
         }, {
             id: 4,
             type: "18-inch Pair Spoke Black",
-            price: 200.00,
+            price: 3500.00,
         }
     ],
     customOrders = [
