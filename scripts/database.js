@@ -1,12 +1,12 @@
 const database = {
     orderBuilder: {},
-    paints = [
+    paints: [
         { id: 1, color: "Silver", price: 100.00 },
         { id: 2, color: "Midnight Blue", price: 125.00 },
         { id: 3, color: "Firebrick Red", price: 150.00 },
         { id: 4, color: "Spring Green", price: 125.00 }
     ],
-    interiors = [
+    interiors: [
         {
             id: 1,
             type: "Beige Fabric",
@@ -28,7 +28,7 @@ const database = {
             price: 200.00,
         },
     ],
-    technologies = [
+    technologies: [
         {
             id: 1,
             package: "Basic Package",
@@ -50,7 +50,7 @@ const database = {
             price: 400.00
         },
     ],
-    wheels = [
+    wheels: [
         {
             id: 1,
             type: "17-inch Pair Radial",
