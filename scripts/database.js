@@ -1,10 +1,7 @@
 const database = {
+    orderBuilder: {},
     paints = [
-        {
-            id: 1,
-            color: "Silver",
-            price: 100.00
-        },
+        {id: 1, color: "Silver", price: 100.00},
         {
             id: 2,
             color: "Midnight Blue",
@@ -85,6 +82,17 @@ const database = {
             type: "18-inch Pair Spoke Black",
             price: 200.00,
         }
+    ],
+    customOrders = [
+        {
+            id: 1,
+            customerName: "Steve Brownlee",
+            timeStamp: Date.now(),
+            paintId: 4,
+            interiorId: 3,
+            technologyId: 2,
+            wheelsId: 4,
+        }
     ]
 };
 
@@ -104,3 +112,24 @@ export const getTechnologies = () => {
 export const getWheels = () => {
     return [...database.wheels];
 };
+
+export const getOrders = () => {
+    return [...database.customOrders];
+};
+
+export const setPaint = (id) => {
+    database.orderBuilder.paintId = id;
+  };
+  
+  export const setInterior = (id) => {
+    database.orderBuilder.interiorId = id;
+  };
+  
+  export const setTechnology = (id) => {
+    database.orderBuilder.technologyId = id;
+  };
+
+  export const setWheels = (id) => {
+    database.orderBuilder.wheelsId = id;
+  };
+
