@@ -1,6 +1,6 @@
 const database = {
     orderBuilder: {},
-    paints =[
+    paints = [
         { id: 1, color: "Silver", price: 100.00 },
         { id: 2, color: "Midnight Blue", price: 125.00 },
         { id: 3, color: "Firebrick Red", price: 150.00 },
@@ -121,3 +121,22 @@ export const setWheels = (id) => {
     database.orderBuilder.wheelsId = id;
 };
 
+export const addCustomOrder = () => {
+    // Copy the current state of user choices
+    const newOrder = { ...database.orderBuilder };
+  
+    // Add a new primary key to the object
+    newOrder.id = [...database.customOrders].pop().id + 1;
+  
+    // Add a timestamp to the order
+    newOrder.timestamp = Date.now();
+  
+    // Add the new order object to custom orders state
+    database.customOrders.push(newOrder);
+  
+    // Reset the temporary state for user choices
+    database.orderBuilder = {};
+  
+    // Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+  };
