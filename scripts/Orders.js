@@ -32,14 +32,19 @@ const buildOrderListItem = (order) => {
   });
   let wheelsCost = foundWheels.price;
 
-  let totalCost = paintCost + interiorCost + technologyCost + wheelsCost;
+  // let totalCost = paintCost + interiorCost + technologyCost + wheelsCost;
+  let totalCost =
+    foundPaint.price +
+    foundInterior.price +
+    foundTechnology.price +
+    foundWheels.price;
 
   const costString = totalCost.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   });
   return `<li>
-          Order #${order.id} costs ${costString}
+          Order #${order.id} was built on ${order.timestamp} and costs ${costString}.
       </li>`;
 };
 

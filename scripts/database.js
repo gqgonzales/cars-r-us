@@ -76,7 +76,7 @@ const database = {
     {
       id: 1,
       customerName: "Steve Brownlee",
-      timeStamp: Date.now(),
+      timestamp: Date.now(),
       paintId: 4,
       interiorId: 3,
       technologyId: 2,
