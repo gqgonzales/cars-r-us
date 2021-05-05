@@ -81,7 +81,13 @@ const database = {
       interiorId: 3,
       technologyId: 2,
       wheelsId: 4,
+      configId: 1,
     },
+  ],
+  configurations: [
+    { id: 1, config: "Sedan", priceMultiplier: 1 },
+    { id: 2, config: "SUV", priceMultiplier: 1.5 },
+    { id: 3, config: "Truck", priceMultiplier: 2.25 },
   ],
 };
 
@@ -105,6 +111,10 @@ export const getOrders = () => {
   return [...database.customOrders];
 };
 
+export const getConfigs = () => {
+  return [...database.configurations];
+};
+
 export const setPaint = (id) => {
   database.orderBuilder.paintId = id;
 };
@@ -119,6 +129,10 @@ export const setTechnology = (id) => {
 
 export const setWheels = (id) => {
   database.orderBuilder.wheelsId = id;
+};
+
+export const setConfig = (id) => {
+  database.orderBuilder.configId = id;
 };
 
 export const addCustomOrder = () => {

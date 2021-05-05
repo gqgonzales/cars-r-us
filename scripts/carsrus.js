@@ -7,6 +7,7 @@ import { Technologies } from "./Technologies.js";
 import { Wheels } from "./Wheels.js";
 import { Orders } from "./Orders.js";
 import { addCustomOrder } from "./database.js";
+import { Configurations } from "./Configurations.js";
 
 document.addEventListener("click", (event) => {
   const itemClicked = event.target;
@@ -35,6 +36,11 @@ export const carsRus = () => {
         <h2>Wheels</h2>
         ${Wheels()}
       </section>
+    </article>
+
+    <article class="config_selector">
+    <h2>Configuration</h2>
+      ${Configurations()}
     </article>
 
     <article>

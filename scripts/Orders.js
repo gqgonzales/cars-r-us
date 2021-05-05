@@ -4,6 +4,7 @@ import {
   getTechnologies,
   getWheels,
   getOrders,
+  getConfigs,
 } from "./database.js";
 
 const buildOrderListItem = (order) => {
@@ -11,33 +12,34 @@ const buildOrderListItem = (order) => {
   const interiors = getInteriors();
   const technologies = getTechnologies();
   const wheels = getWheels();
+  const configs = getConfigs();
 
   const foundPaint = paints.find((paint) => {
     return paint.id === order.paintId;
   });
-  let paintCost = foundPaint.price;
 
   const foundInterior = interiors.find((interior) => {
     return interior.id === order.interiorId;
   });
-  let interiorCost = foundInterior.price;
 
   const foundTechnology = technologies.find((technology) => {
     return technology.id === order.technologyId;
   });
-  let technologyCost = foundTechnology.price;
 
   const foundWheels = wheels.find((wheelPair) => {
     return wheelPair.id === order.wheelsId;
   });
-  let wheelsCost = foundWheels.price;
 
-  // let totalCost = paintCost + interiorCost + technologyCost + wheelsCost;
+  const foundConfig = configs.find((config) => {
+    return config.id === order.configId;
+  });
+
   let totalCost =
-    foundPaint.price +
-    foundInterior.price +
-    foundTechnology.price +
-    foundWheels.price;
+    (foundPaint.price +
+      foundInterior.price +
+      foundTechnology.price +
+      foundWheels.price) *
+    foundConfig.priceMultiplier;
 
   const costString = totalCost.toLocaleString("en-US", {
     style: "currency",
